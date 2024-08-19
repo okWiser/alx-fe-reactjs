@@ -1,4 +1,4 @@
-import React from 'react';
+
 
 function MainContent() {
     return (
@@ -23,13 +23,3 @@ const styles = {
         textAlign: 'center',
     },
 };
-
-function MainContent() {
-    return (
-        <main style={styles.main}>
-            <p style={styles.paragraph}>I love to visit New York, Paris, and Tokyo.</p>
-        </main>
-    );    
-}
-
-export default MainContent;
