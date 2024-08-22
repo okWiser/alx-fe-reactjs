@@ -34,6 +34,9 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
+      <UserContext.Provider value={userData}>
+      <ProfilePage />
+      </UserContext.Provider>
       <WelcomeMessage />
       <Header />
       <MainContent />
