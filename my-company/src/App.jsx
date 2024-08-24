@@ -8,16 +8,17 @@ import Services from './Services';
 import Contact from './Contact';
 
 export default function App() {
-  return (
-    <div style={{ textAlign: 'center' }}>
-      <Headerbar />
-      <BrowserRouter>
-        <Switch>
-          <Route path="/about" exact component={About} />
-          <Route path="/" exact component={Home} /> {/* Use "/" for the root path */}
-          {/* Add more routes as needed */}
-        </Switch>
-      </BrowserRouter>
-    </div>
-  );
-}
+    return (
+      <div style={{ textAlign: 'center' }}>
+        <Headerbar />
+        <BrowserRouter>
+          <Switch>
+            <Route path="/about" exact component={About} />
+            <Route path="/Home" exact component={Home} />
+            <Route path="/services" exact component={Services} />
+            <Route path="/contact" exact component={Contact} />
+          </Switch>
+        </BrowserRouter>
+      </div>
+    );
+  }
