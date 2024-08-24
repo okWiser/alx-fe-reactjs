@@ -13,6 +13,7 @@ import Routes from './Routes';
 
 <Route path="/" component={Routes} />
 export default function App() {
+}
     return (
         <div style={{ textAlign: 'center' }}>
             <Headerbar />
