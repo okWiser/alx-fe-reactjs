@@ -6,7 +6,12 @@ import Home from './Home';
 import About from './About';
 import Services from './Services';
 import Contact from './Contact';
+import Routes from './Routes';
 
+["Routes", "element"]
+// <BrowserRouter>
+
+<Route path="/" component={Routes} />
 export default function App() {
     return (
         <div style={{ textAlign: 'center' }}>
