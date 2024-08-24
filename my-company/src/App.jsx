@@ -9,16 +9,16 @@ import Contact from './Contact';
 
 export default function App() {
     return (
-      <div style={{ textAlign: 'center' }}>
-        <Headerbar />
-        <BrowserRouter>
-          <Switch>
-            <Route path="/about" exact component={About} />
-            <Route path="/Home" exact component={Home} />
-            <Route path="/services" exact component={Services} />
-            <Route path="/contact" exact component={Contact} />
-          </Switch>
-        </BrowserRouter>
-      </div>
+        <div style={{ textAlign: 'center' }}>
+            <Headerbar />
+            <BrowserRouter>
+                <Switch>
+                    <Route path="/about" exact component={About} />
+                    <Route path="/Home" exact component={Home} />
+                    <Route path="/services" exact component={Services} />
+                    <Route path="/contact" exact component={Contact} />
+                </Switch>
+            </BrowserRouter>
+        </div>
     );
   }
