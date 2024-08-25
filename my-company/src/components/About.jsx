@@ -1,10 +1,15 @@
-function About() {
-    return (
-      <div style={{ padding: '20px' }}>
-        <h1>About Us</h1>
-        <p>Our company has been providing top-notch services since 1990. We specialize in various fields including technology, marketing, and consultancy.</p>
-      </div>
-    );
-  }
+import React from 'react';
+import Footer from './Footer';
 
-  export default About;
+const About = () => {
+  return (
+    <div style={{ textAlign: 'center', padding: '20px' }}>
+      <h2 style={{ fontSize: '20px', color: '#444' }}>About Us</h2>
+      <p style={{ fontSize: '16px', color: '#777' }}>
+        Our company has been serving clients since 2005. We specialize in web development, design, and digital marketing.
+      </p>
+    </div>
+  );
+};
+
+export default About;
