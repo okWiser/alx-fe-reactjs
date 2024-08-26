@@ -1,6 +1,7 @@
 import { useRecipeStore } from './RecipeStore';
 
- const RecipeList = () => {
+
+export function RecipeList() {
    const recipes = useRecipeStore(state => state.recipes);
 
    return (
@@ -14,3 +15,5 @@ import { useRecipeStore } from './RecipeStore';
      </div>
    );
  };
+
+
