@@ -31,18 +31,15 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
+      <Router>
+  <Routes>
+    <Route path="/home" element={<Home />} />
+    <Route path="/about" element={<About />} />
+    <Route path="/contact" element={<Contact />} />
+  </Routes>
+</Router>
       <RecipeList />
       <AddRecipeForm />
     </>
   )
 }
-
-
-
-// Rest of the code...
-
-<Router>
-  <Routes>
-    {/* Define your routes here */}
-  </Routes>
-</Router>
