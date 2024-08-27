@@ -4,6 +4,7 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import RecipeList from './RecipeList';
 import AddRecipeForm from './AddRecipeForm';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -36,3 +37,12 @@ function App() {
   )
 }
 
+
+
+// Rest of the code...
+
+<Router>
+  <Routes>
+    {/* Define your routes here */}
+  </Routes>
+</Router>
