@@ -1,7 +1,7 @@
 // src/__tests__/recipeStore.test.js
 import { act } from 'react-dom/test-utils';
 import create from 'zustand';
-import useRecipeStore from '../recipeStore';
+import useRecipeStore from '../components/recipeStore';
 
 describe('Recipe Store', () => {
   let store;
