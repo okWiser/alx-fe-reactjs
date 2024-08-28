@@ -1,3 +1,4 @@
+import React from 'react'
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
@@ -6,6 +7,8 @@ import RecipeList from './RecipeList';
 import AddRecipeForm from './AddRecipeForm';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import RecipeDetail from './RecipeDetail';
+import RecommendationsList from './components/RecommendationsList'
+import FavoritesList from './components/FavoritesList'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -28,6 +31,21 @@ function App() {
         <p>
           Edit <code>src/App.jsx</code> and save to test HMR
         </p>
+        <div>
+      <h1>My Recipe App</h1>
+      <div style={{ display: 'flex', justifyContent: 'space-around' }}>
+        <div>
+          <FavoritesList />
+        </div>
+        <div>
+          <RecommendationsList />
+        </div>
+      </div>
+    </div>
+        <div>
+      <h1>My Recipe App</h1>
+      <RecommendationsList />
+    </div>
       </div>
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
@@ -45,4 +63,7 @@ function App() {
     </>
   )
 }
+
+export default App;
+
 
