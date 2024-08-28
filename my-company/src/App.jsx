@@ -4,7 +4,7 @@ import Headerbar from './HeaderBar';
 import Home from './components/Home';
 import About from './components/About';
 import Services from './components/Services';
-import Contact from './components/Contact';
+import contact from './components/Contact';
 import Routes from './Routes';
 import Navbar from './Navbar'; 
 

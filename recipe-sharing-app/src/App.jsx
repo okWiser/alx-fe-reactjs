@@ -3,12 +3,20 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import RecipeList from './RecipeList';
-import AddRecipeForm from './AddRecipeForm';
+import RecipeList from './components/RecipeList';
+import AddRecipeForm from './components/AddRecipeForm';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import RecipeDetails from './components/RecipeDetails'
 import RecommendationsList from './components/RecommendationsList'
 import FavoritesList from './components/FavoritesList'
+import Home from './components/Home'
+import About from './components/About'
+import useRecipeStore from './recipeStore'
+import Contact from './components/Contact'
+import RecipeDetail from './components/RecipeDetails'
+import useRecipeStore from './recipeStore'
+
+
 
 function App() {
   const [count, setCount] = useState(0)
@@ -60,10 +68,9 @@ function App() {
       <RecipeList />
       <AddRecipeForm />
       <RecipeDetail />
+      <About />
     </>
   )
 }
 
 export default App;
-
-
