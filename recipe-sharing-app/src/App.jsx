@@ -6,7 +6,7 @@ import './App.css'
 import RecipeList from './RecipeList';
 import AddRecipeForm from './AddRecipeForm';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
-import RecipeDetail from './RecipeDetail';
+import RecipeDetails from './components/RecipeDetails'
 import RecommendationsList from './components/RecommendationsList'
 import FavoritesList from './components/FavoritesList'
 
