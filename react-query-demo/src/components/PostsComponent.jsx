@@ -1,9 +1,13 @@
 import React from 'react';
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
+
+
 const { isError } = useQuery('posts', fetchPosts, {
   staleTime: 5000,
   cacheTime: 10000,
+  refetchOnWindowFocus: true,
+  keepPreviousData: true,
 });
 
 const fetchPosts = async () => {
