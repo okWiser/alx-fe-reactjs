@@ -2,19 +2,9 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import React from 'react';
 import RegistrationForm from './components/RegistrationForm';
 import React from 'react';
-import FormikForm from './components/FormikForm';
-
-function App() {
-  return (
-    <div className="App">
-      <h1>Register</h1>
-      <FormikForm />
-    </div>
-  );
-}
+import FormikForm from './components/formikForm';
 
 function App() {
   return (
@@ -23,9 +13,8 @@ function App() {
       <RegistrationForm />
     </div>
   );
-}
 
-function App() {
+
   const [count, setCount] = useState(0)
 
   return (
