@@ -5,7 +5,7 @@ const RegistrationForm = () => {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [error, setError] = useState('');
+  const [error, setErrors] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
