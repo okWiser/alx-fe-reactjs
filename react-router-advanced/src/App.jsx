@@ -20,21 +20,20 @@ import Profile from './components/Profile';
 import ProfileDetails from './components/ProfileDetails';
 import ProfileSettings from './components/ProfileSettings';
 import BlogPost from './components/BlogPost';
-
+import ProtectedRoute from './components/ProtectedRoute';
 
 function App() {
   return (
     <Router>
       <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="profile" element={<Profile />}>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/posts" element={<PostsComponent />} />
+        <Route path="/blog/:id" element={<BlogPost />} />
+        <ProtectedRoute path="/profile/" element={<Profile />}>
           <Route path="details" element={<ProfileDetails />} />
           <Route path="settings" element={<ProfileSettings />} />
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/posts" element={<PostsComponent />} />
-          <Route path="/blog/:id" element={<BlogPost />} />
-        </Route>
+        </ProtectedRoute>
       </Routes>
     </Router>
   );
