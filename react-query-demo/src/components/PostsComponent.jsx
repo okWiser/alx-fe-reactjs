@@ -1,6 +1,10 @@
 import React from 'react';
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
+const { isError } = useQuery('posts', fetchPosts, {
+  staleTime: 5000,
+  cacheTime: 10000,
+});
 
 const fetchPosts = async () => {
   const { data } = await axios.get('https://jsonplaceholder.typicode.com/posts');
