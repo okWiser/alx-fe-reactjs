@@ -1,10 +1,18 @@
 import { render, screen, fireEvent } from '@testing-library/react';
-import TodoList from '../TodoList';
+import TodoList from './TodoList';
 
 test('renders Todo List heading', () => {
   render(<TodoList />);
   const headingElement = screen.getByText(/Todo List/i);
   expect(headingElement).toBeInTheDocument();
+});
+
+test('renders initial todos', () => {
+  render(<TodoList />);
+  const todoElements = screen.getAllByRole('listitem');
+  expect(todoElements).toHaveLength(2); // Assuming there are 2 initial todos
+  expect(screen.getByText(/Learn React/i)).toBeInTheDocument();
+  expect(screen.getByText(/Build a Todo App/i)).toBeInTheDocument();
 });
 
 test('adds a new todo', () => {
@@ -25,11 +33,14 @@ test('toggles todo completion', () => {
   fireEvent.click(todoElement);
 
   expect(todoElement).toHaveStyle('text-decoration: line-through');
+
+  fireEvent.click(todoElement);
+  expect(todoElement).toHaveStyle('text-decoration: none');
 });
 
 test('deletes a todo', () => {
   render(<TodoList />);
-  const deleteButton = screen.getByText(/Delete/i);
+  const deleteButton = screen.getAllByText(/Delete/i)[0]; // Assuming the first delete button
   fireEvent.click(deleteButton);
 
   const todoElement = screen.queryByText(/Learn React/i);
