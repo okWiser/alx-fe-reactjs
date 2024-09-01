@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import AddTodoForm from './AddTodoForm';
 
 const TodoList = () => {
   const [todos, setTodos] = useState([
@@ -36,30 +37,6 @@ const TodoList = () => {
       </ul>
       <AddTodoForm addTodo={addTodo} />
     </div>
-  );
-};
-
-const AddTodoForm = ({ addTodo }) => {
-  const [text, setText] = useState('');
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (text.trim()) {
-      addTodo(text);
-      setText('');
-    }
-  };
-
-  return (
-    <form onSubmit={handleSubmit}>
-      <input 
-        type="text" 
-        value={text} 
-        onChange={(e) => setText(e.target.value)} 
-        placeholder="Add a new todo"
-      />
-      <button type="submit">Add Todo</button>
-    </form>
   );
 };
 
