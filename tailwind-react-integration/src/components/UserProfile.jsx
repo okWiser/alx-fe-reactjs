@@ -6,7 +6,7 @@ const UserProfile = () => {
       <img
         src="your-image-url.jpg"
         alt="User Profile"
-        className="rounded-full w-24 h-24 sm:w-36 sm:h-36 mx-auto"
+        className="rounded-full sm:w-24 sm:h-24 md:w-36 md:h-36 mx-auto"
       />
       <h1 className="text-lg sm:text-xl md:text-xl text-blue-800 my-4">Your Name</h1>
       <p className="text-sm sm:text-base text-gray-600">Your description goes here.</p>
