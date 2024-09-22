@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import data from './data.json'; // Adjust the path as needed
 
 function RecipeDetail() {
   const { id } = useParams();
   const [recipe, setRecipe] = useState(null);
 
   useEffect(() => {
-    const fetchRecipe = async () => {
+    const fetchRecipe = () => {
       try {
-        const response = await fetch(`https://api.example.com/recipes/${id}`);
-        const data = await response.json();
-        setRecipe(data);
+        const recipeData = data.find((recipe) => recipe.id === parseInt(id));
+        setRecipe(recipeData);
       } catch (error) {
         console.error('Error fetching recipe:', error);
       }
