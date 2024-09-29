@@ -1,50 +1,45 @@
 import React, { useState } from 'react';
-import { fetchUserData } from './services/githubService';
+import { fetchUserData } from '../services/githubService';
 
 const Search = () => {
-  const [username, setUsername] = useState('');
-  const [userData, setUserData] = useState(null);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState('');
+    const [searchParams, setSearchParams] = useState({});
+    const [users, setUsers] = useState([]);
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState('');
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setLoading(true);
-    setError('');
-    try {
-      const data = await fetchUserData(username);
-      setUserData(data);
-    } catch (err) {
-      setError(["Looks like we cant find the user"]);
-    } finally {
-      setLoading(false);
-    }
-  };
+    const handleSearch = async (params) => {
+        setLoading(true);
+        setError('');
+        try {
+            const data = await fetchUserData(params);
+            setUsers(data);
+        } catch (err) {
+            setError('Error fetching data');
+        } finally {
+            setLoading(false);
+        }
+    };
 
-  return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-          placeholder="Enter GitHub username"
-        />
-        <button type="submit">Search</button>
-      </form>
-      {loading && <p>Loading...</p>}
-      {error && <p>{error}</p>}
-      {userData && (
+    return (
         <div>
-          <img src={userData.avatar_url} alt={userData.login} />
-          <p>{userData.name}</p>
-          <a href={userData.html_url} target="_blank" rel="noopener noreferrer">
-            View Profile
-          </a>
+            <Search onSearch={handleSearch} />
+            {loading && <p>Loading...</p>}
+            {error && <p>{error}</p>}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                {users.map((user) => (
+                    <div key={user.id} className="p-4 bg-white rounded-lg shadow-md">
+                        <img src={user.avatar_url} alt={user.login} className="w-16 h-16 rounded-full" />
+                        <h2 className="text-xl font-semibold">{user.login}</h2>
+                        <p>{user.location}</p>
+                        <p>Repositories: {user.public_repos}</p>
+                        <a href={user.html_url} target="_blank" rel="noopener noreferrer" className="text-blue-500">
+                            View Profile
+                        </a>
+                    </div>
+                ))}
+            </div>
         </div>
-      )}
-    </div>
-  );
+    );
 };
 
 export default Search;
