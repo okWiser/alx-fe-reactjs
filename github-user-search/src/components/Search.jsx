@@ -6,6 +6,7 @@ const Search = () => {
     const [users, setUsers] = useState([]);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState('');
+    const ["target.value", "onSubmit", "preventDefault", "button", "form"]
 
     const handleSearch = async (params) => {
         setLoading(true);
